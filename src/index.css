@@ -1,13 +1,52 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.top-pane {
+  background-color: hsl(83, 12%, 38%);
+}
+/*each pane will take half space on screen */
+.pane {
+  height: 40vh;
+  display: flex;
+}
+
+.editor-container {
+  flex-grow: 1;
+  flex-direction: column-reverse;
+  flex-basis: 0;
+  display: flex;
+  padding: 1%;
+  background-color: hsl(171, 7%, 37%);
+}
+/*collapsed is needed so that open/close button opens and closes the container, so 
+flex grow needs to be 0*/
+.editor-container.collapsed {
+  flex-grow: 0;
+}
+/**/
+.editor-container.collapsed.CodeMirror-scroll {
+  position: absolute;
+}
+.expand-coll-button {
+  background: none;
+  border: none;
+  color: hsl(0, 100%, 99%);
+}
+
+.editor-title {
+  display: flex;
+  justify-content: center;
+  background-color: hsl(216, 35%, 44%);
+  color: hsl(0, 100%, 99%);
+  padding: 2%;
+  border-bottom-left-radius: 5rem;
+}
+.CodeMirror {
+  height: 100% !important;
+}
+.code-mirror-wrapper {
+  flex-grow: 1;
+  border-top-right-radius: 2rem;
+  overflow: hidden;
 }
