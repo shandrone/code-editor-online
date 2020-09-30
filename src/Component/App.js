@@ -10,7 +10,7 @@ function App() {
   const [srcDoc, setSrcDoc] = useState("");
 
   /** to render html css js to the ifram, source doc is created and delaying it by
-   * .5 second so that it doesnot render iframe immidietly and end up slowing down the
+   * .5 second so that it dsdsdoesnot render iframe immidietly and end up slowing down the
    * browser
    */
   useEffect(() => {
